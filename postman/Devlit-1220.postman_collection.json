@@ -1,0 +1,1028 @@
+{
+	"info": {
+		"_postman_id": "3d4336c1-3063-4352-88ee-92733be90f7c",
+		"name": "Devlit-1220",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OpenAPI",
+			"item": [
+				{
+					"name": "Certificate",
+					"item": [
+						{
+							"name": "Generate Certificate Signing Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"id\", jsonData.response[0][\"id\"]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"allowWildCardCert\": true,\n  \"digestType\": \"SHA-256\",\n  \"hostnames\": [\n    \"ise\"\n  ],\n  \"keyLength\": \"1024\",\n  \"keyType\": \"ECDSA\",\n  \"subjectCity\": \"San Jose\",\n  \"subjectCommonName\": \"ise.abl.ninja\",\n  \"subjectCountry\": \"US\",\n  \"subjectOrg\": \"IT\",\n  \"subjectOrgUnit\": \"Operations\",\n  \"subjectState\": \"FL\",\n  \"usedFor\": \"MULTI-USE\"\n}\n"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"",
+										"v1",
+										"certs",
+										"certificate-signing-request"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Generate Certificate Signing Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"allowWildCardCert\": true,\n  \"digestType\": \"SHA-256\",\n  \"hostnames\": [\n    \"ise\"\n  ],\n  \"keyLength\": \"1024\",\n  \"keyType\": \"ECDSA\",\n  \"sanDNS\": [\n    \"ise\", \"ise.securitydemo.net\"\n  ],\n  \"sanIP\": [\n    \"198.18.133.27\"\n  ],\n  \"subjectCity\": \"San Jose\",\n  \"subjectCommonName\": \"$FQDN$\",\n  \"subjectCountry\": \"US\",\n  \"subjectOrg\": \"IT\",\n  \"subjectOrgUnit\": \"Operations\",\n  \"subjectState\": \"FL\",\n  \"usedFor\": \"MULTI-USE\"\n}\n"
+										},
+										"url": {
+											"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request",
+											"protocol": "https",
+											"host": [
+												"{{ise_host}}"
+											],
+											"path": [
+												"api",
+												"",
+												"v1",
+												"certs",
+												"certificate-signing-request"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "bbcdc7e0-bf7f-11ec-9015-4e9026adfc42"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-WebKit-CSP",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "vary",
+											"value": "accept-encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 01:26:29 GMT"
+										},
+										{
+											"key": "Server",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": [\n        {\n            \"message\": \"CSR Generated successfully for node ise\",\n            \"id\": \"d57d237a-9cd4-4b14-9c00-0a1dd7f84004\",\n            \"link\": {\n                \"rel\": \"self\",\n                \"href\": \"https://198.18.133.27/api/v1/certs/certificate-signing-request/ise/d57d237a-9cd4-4b14-9c00-0a1dd7f84004\",\n                \"type\": \"application/json\"\n            }\n        }\n    ],\n    \"version\": \"1.0.1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Bind Certificate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"allowExtendedValidity\": true,\n  \"allowOutOfDateCert\": true,\n  \"allowReplacementOfCertificates\": true,\n  \"allowReplacementOfPortalGroupTag\": true,\n  \"data\": \"{{certificate}}\",\n  \"hostName\": \"{{hostName}}\",\n  \"id\": \"{{id}}\",\n  \"ims\": false,\n  \"name\": \"Let's Encrypt Signed Certificate\",\n  \"validateCertificateExtensions\": false\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}/api/v1/certs/signed-certificate/bind",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"certs",
+										"signed-certificate",
+										"bind"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Certificate Signing Requests",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"id\", jsonData.response[0][\"id\"]);",
+											"pm.environment.set(\"hostName\", jsonData.response[0][\"hostName\"]);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"",
+										"v1",
+										"certs",
+										"certificate-signing-request"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Certificate Signing Requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request",
+											"protocol": "https",
+											"host": [
+												"{{ise_host}}"
+											],
+											"path": [
+												"api",
+												"",
+												"v1",
+												"certs",
+												"certificate-signing-request"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "JSESSIONIDSSO=REMOVE; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure; HttpOnly"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "JSESSIONIDSSO=E0930E22AF231C79A4831B43FFC26B91; Path=/; Secure; HttpOnly"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "APPSESSIONID=22E1752B35A2646561F6FEF1BFB98A51; Path=/api; Secure; HttpOnly"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "e0d91b10-bf7b-11ec-9015-4e9026adfc42"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-WebKit-CSP",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "vary",
+											"value": "accept-encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 00:58:51 GMT"
+										},
+										{
+											"key": "Server",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": [\n        {\n            \"id\": \"27e18bf5-6724-44d8-810e-e00263494a34\",\n            \"hostName\": \"ise\",\n            \"subject\": \"CN=ise.securitydemo.net,OU=Sample OU,O=Sample Org,L=San Francisco,ST=CA,C=US\",\n            \"keySize\": \"1024\",\n            \"timeStamp\": \"Fri Apr 15 13:37:34.883 UTC 2022\",\n            \"friendlyName\": \"ise#Multi-Use\",\n            \"usedFor\": \"Multi-Use\",\n            \"groupTag\": \"\",\n            \"signatureAlgorithm\": \"SHA-256\",\n            \"link\": {\n                \"rel\": \"self\",\n                \"href\": \"https://198.18.133.27/api/v1/certs/certificate-signing-request/ise/27e18bf5-6724-44d8-810e-e00263494a34\",\n                \"type\": \"application/json\"\n            }\n        }\n    ],\n    \"nextPage\": null,\n    \"previousPage\": null,\n    \"version\": \"1.0.1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Specific Certificate Signing Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"id\", jsonData.response[0][\"id\"]);",
+											"pm.environment.set(\"hostName\", jsonData.response[0][\"hostName\"]);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"",
+										"v1",
+										"certs",
+										"certificate-signing-request"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Specific Certificate Signing Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request/{{hostName}}/{{id}}",
+											"protocol": "https",
+											"host": [
+												"{{ise_host}}"
+											],
+											"path": [
+												"api",
+												"",
+												"v1",
+												"certs",
+												"certificate-signing-request",
+												"{{hostName}}",
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "57783ea0-bf80-11ec-9015-4e9026adfc42"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-WebKit-CSP",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "vary",
+											"value": "accept-encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 01:30:48 GMT"
+										},
+										{
+											"key": "Server",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": {\n        \"csrContents\": \"-----BEGIN CERTIFICATE REQUEST-----\\nMIIBszCCAVoCAQAwbjEdMBsGA1UEAxMUaXNlLnNlY3VyaXR5ZGVtby5uZXQxEzAR\\nBgNVBAsTCk9wZXJhdGlvbnMxCzAJBgNVBAoTAklUMREwDwYDVQQHEwhTYW4gSm9z\\nZTELMAkGA1UECBMCRkwxCzAJBgNVBAYTAlVTMFkwEwYHKoZIzj0CAQYIKoZIzj0D\\nAQcDQgAE54Rk3EmKZe3oG04LamLsiVNOpviKmwclBCKik06m0+a3+RbTN/cMzYnp\\nQW6Vz2FSyZ9n+mpDQBJAY8JJmn30MqCBiTCBhgYJKoZIhvcNAQkOMXkwdzAqBgNV\\nHREEIzAhggNpc2WCFGlzZS5zZWN1cml0eWRlbW8ubmV0hwTGEoUbMAsGA1UdDwQE\\nAwIF4DAdBgNVHQ4EFgQU2jmj7l5rSw0yVb/vlWAYkK/YBwkwHQYDVR0lBBYwFAYI\\nKwYBBQUHAwEGCCsGAQUFBwMCMAoGCCqGSM49BAMCA0cAMEQCIEbOboB1nRQ2UScg\\nAdm+GpwzaCVVA5askNHbinKEyAX7AiArAQb9qo1vkCmtpop0y6Xyi5o0JEqlqKBv\\nQtduHDoJqQ==\\n-----END CERTIFICATE REQUEST-----\\n\",\n        \"id\": \"d57d237a-9cd4-4b14-9c00-0a1dd7f84004\",\n        \"hostName\": \"ise\",\n        \"subject\": \"CN=ise.securitydemo.net,OU=Operations,O=IT,L=San Jose,ST=FL,C=US\",\n        \"keySize\": \"1024\",\n        \"timeStamp\": \"Tue Apr 19 01:26:29.241 UTC 2022\",\n        \"friendlyName\": \"ise#Multi-Use\",\n        \"usedFor\": \"Multi-Use\",\n        \"groupTag\": \"\",\n        \"signatureAlgorithm\": \"SHA-256\",\n        \"link\": {\n            \"rel\": \"self\",\n            \"href\": \"https://198.18.133.27/api/v1/certs/certificate-signing-request/ise/d57d237a-9cd4-4b14-9c00-0a1dd7f84004\",\n            \"type\": \"application/json\"\n        }\n    },\n    \"version\": \"1.0.1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All system Certificates for a node",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/api/v1/certs/system-certificate/{{hostName}}",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"certs",
+										"system-certificate",
+										"{{hostName}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All system Certificates for a node Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"id\", jsonData.response[0][\"id\"]);",
+											"pm.environment.set(\"hostName\", jsonData.response[0][\"hostName\"]);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/api/v1/certs/system-certificate/{{hostName}}/{{id}}",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"certs",
+										"system-certificate",
+										"{{hostName}}",
+										"{{id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update  a System Certificate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"id\", jsonData.response[0][\"id\"]);",
+											"pm.environment.set(\"hostName\", jsonData.response[0][\"hostName\"]);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"admin\": false,\n  \"allowPortalTagTransferForSameSubject\": true,\n  \"allowReplacementOfPortalGroupTag\": true,\n  \"allowRoleTransferForSameSubject\": true,\n  \"description\": \"Description of certificate\",\n  \"eap\": false,\n  \"expirationTTLPeriod\": 36,\n  \"expirationTTLUnits\": \"days\",\n  \"ims\": false,\n  \"name\": \"System Certificate\",\n  \"portal\": false,\n  \"portalGroupTag\": \"Default Portal Certificate Group\",\n  \"pxgrid\": false,\n  \"radius\": false,\n  \"renewSelfSignedCertificate\": false,\n  \"saml\": false\n}\n"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}/api/v1/cert/system-certificate/{{hostname}}/{{id}}",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cert",
+										"system-certificate",
+										"{{hostname}}",
+										"{{id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Certificate Signing Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request/{{hostName}}/{{id}}",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"",
+										"v1",
+										"certs",
+										"certificate-signing-request",
+										"{{hostName}}",
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Certificate Signing Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://{{ise_host}}/api//v1/certs/certificate-signing-request/{{hostName}}/{{id}}",
+											"protocol": "https",
+											"host": [
+												"{{ise_host}}"
+											],
+											"path": [
+												"api",
+												"",
+												"v1",
+												"certs",
+												"certificate-signing-request",
+												"{{hostName}}",
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "e6a26dd0-bf7b-11ec-9015-4e9026adfc42"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-WebKit-CSP",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "vary",
+											"value": "accept-encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 19 Apr 2022 00:59:01 GMT"
+										},
+										{
+											"key": "Server",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": {\n        \"message\": \"CSR deleted successfully\"\n    },\n    \"version\": \"1.0.1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Trusted Root Certificate",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Export a System Certificate",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{ers_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{ers_username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"export\": \"CERTIFICATE_WITH_PRIVATE_KEY\",\n  \"id\": \"{{id}}\",\n  \"password\": \"{{certificate_password}}\"\n}"
+								},
+								"url": {
+									"raw": "https://{{ise_host}}/api/v1/certs/system-certificate/export",
+									"protocol": "https",
+									"host": [
+										"{{ise_host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"certs",
+										"system-certificate",
+										"export"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Export a System Certificate",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"export\": \"CERTIFICATE_WITH_PRIVATE_KEY\",\n  \"id\": \"{{id}}\",\n  \"password\": \"{{certificate_password}}\"\n}"
+										},
+										"url": {
+											"raw": "https://{{ise_host}}/api/v1/certs/system-certificate/export",
+											"protocol": "https",
+											"host": [
+												"{{ise_host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"certs",
+												"system-certificate",
+												"export"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "raw",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/octet-stream"
+										},
+										{
+											"key": "Content-Length",
+											"value": "5542"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "APPSESSIONID=8CED464ADD36F82A5583BB48CEB6FB9C; Path=/api; Secure; HttpOnly"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "af79ab30-c100-11ec-adcc-26b7750b44b8"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-WebKit-CSP",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Content-Disposition",
+											"value": "attachment; filename=CNiseablninjaiseablninja0.zip"
+										},
+										{
+											"key": "Accept-Ranges",
+											"value": "bytes"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 20 Apr 2022 23:22:03 GMT"
+										},
+										{
+											"key": "Server",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "PK\u0003\u0004\n\u0000\u0000\b\u0000\u0000���TD�U�\u001a\u0007\u0000\u0000\u001a\u0007\u0000\u0000\u001d\u0000\u0000\u0000CNiseablninjaiseablninja0.pem-----BEGIN CERTIFICATE-----\nMIIFEjCCAvqgAwIBAgINAhVKd1bl0YuSZhbEFzANBgkqhkiG9w0BAQwFADAYMRYw\nFAYDVQQDEw1pc2UuYWJsLm5pbmphMB4XDTIyMDQyMDExNDkwM1oXDTI0MDQxOTEx\nNDkwM1owGDEWMBQGA1UEAxMNaXNlLmFibC5uaW5qYTCCAiIwDQYJKoZIhvcNAQEB\nBQADggIPADCCAgoCggIBANQyx3qVEDR2BDGV9wA3ZHIQHufcUwZpDOxXLZ/G4Vlo\nr+wxKqfvL8Tc6YlDAlCH3CL16zDNXxyqzSc2aCDynRNUNA2MGDWczaA2QcjspxDL\nrsEqSP5rVcwa/k9WHIfz2C/FHap/0W/n5cmIRrK7ZauMnkkhzCRSTNw6yUp/DJsD\nQhxjpb3wd3QHrfTRlAQo9Edlm2Fqg2xZWaRkmZz6+meJc1SHzdGVzuw9xUsdwjRJ\nTec7bYAqANItRkPDZdVh39n1WPWz6sdzYE2EC+7NHU2X9qMeiUM5cDKGOQ0zBT0B\n//EfZx3AyF4pVNAzh5VWm64bdl1dLJT1PgSAZV/wMWGG2qD7WQru2o0N0+6COWdB\nLEUhoJAbgHdS7KQLLpQCW3QYTj6i/05d75HDGSA9oF14nQUbkJp0Jdxr6vDKvKTD\nrWVoaijtqSrAlsDY8f+uitYwx2f2SB8WMeTyEx3HK1hGAcvEuzj3dbEZwFgV6tML\nrEs9/AfjtYpaM8Z2vbydHp+l5YhXieLkYEd+BnRFQBHVK9tmY1XjvBG+YE346KHb\nxHCYJZ+wdFiuF/hGzvq6LZo+OK/GP/UNHbAwTOK3xdETjbW6D/594ymB7Sm4nJyK\nuJL7+sWrZ0K9iC/79AMl5HP3mrwTYEV2fevQZkOXw5acuaS4gAKJ5W7o3OC7OdKn\nAgMBAAGjWzBZMAwGA1UdEwQFMAMBAf8wCwYDVR0PBAQDAgLsMB0GA1UdDgQWBBTl\nF8KEl9Licb4vqB+2ZQPwcCaZ2jAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH\nAwIwDQYJKoZIhvcNAQEMBQADggIBAJEzQMbUO9T1Un/QLyeIH7gqY8lokAO9ZIBH\nMoz99FGB9ftOmvKR3KaqVFBD21QQ6Ifto3gHj8h9sgGp63dvAD6CQ7UiL4SeNnHU\nAyxHkYmU9xoyPagOys6Mv/wh3aquYKsdtsDuDJjX4wGX4h49mlvdIByoKmAopADg\nWY3Dv8V77MFsei7wN04HfhY4zD5HotxolGSOJyvGzT79guDL8ls4YZMlFgVfD0OU\nh2rbsVa5mBY9G2zVEhnKiaZ2FJVw/OfecgywJHFsXy+HkqMyweoAK98Jrss7dM+b\nOkr+pQzhvcavcFeILcUsEocNUBg5iGFvZa29XNys3HSSSCMydWNzr+9hNM97PJxL\nNHGBAgg7GHGmgycGL0zBbW5SefI2ri7mITFXtr3/F4pqIcvLGOx2nb+70zvFqTOx\nZS0kf7Dtqb1OEvGgexUhzsYUFvhSuswDzOREIRGeHegRa96u3EGrtrtjaPfo7+/p\npbcYnLSmkYVhO18m3Z0pQ3v9k/G8+gZNVO53ABV+58TGQ+n8xE4sQkC8BciNfqQg\nieijLv/Z7T7wUvjslI/RBLuSK6Xm5yI72TCvR3sFu6aWyq4fsZFfKym/+8RTvzby\naAxgBhvirCsh80+4RDocBQnQ/nFvY+UA3MQPRhOjD9eR8rJf8Neqz/kSSSt8E5IL\n8EeHK4zH\n-----END CERTIFICATE-----\nPK\u0003\u0004\n\u0000\u0000\b\u0000\u0000���T/E��j\r\u0000\u0000j\r\u0000\u0000\u001d\u0000\u0000\u0000CNiseablninjaiseablninja0.pvk-----BEGIN ENCRYPTED PRIVATE KEY-----\n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\n-----END ENCRYPTED PRIVATE KEY-----\nPK\u0001\u0002\n\u0000\n\u0000\u0000\b\u0000\u0000���TD�U�\u001a\u0007\u0000\u0000\u001a\u0007\u0000\u0000\u001d\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000CNiseablninjaiseablninja0.pemPK\u0001\u0002\n\u0000\n\u0000\u0000\b\u0000\u0000���T/E��j\r\u0000\u0000j\r\u0000\u0000\u001d\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000U\u0007\u0000\u0000CNiseablninjaiseablninja0.pvkPK\u0005\u0006\u0000\u0000\u0000\u0000\u0002\u0000\u0002\u0000�\u0000\u0000\u0000�\u0014\u0000\u0000\u0000\u0000"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
