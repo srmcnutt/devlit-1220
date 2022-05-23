@@ -20,13 +20,13 @@ if not "ISE_PAN" in os.environ and "ISE_USER" not in os.environ\
     exit(1)
 
 @click.command()
-@click.option('--command',\
+@click.option('-c', '--command',\
     type = click.Choice(['ls', 'export', 'expire']))
 @click.version_option(version="0.1")
 def cli(command):
     """
     ls - list nodes in the ISE deployment.
-    export - export all certificates to cert_backup folder.
+    export - export all certificates to cert_backup folder using --password.
     expire - check for certificates expiring in --days.
     """
     if command == None:
