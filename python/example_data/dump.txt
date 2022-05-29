@@ -1,0 +1,360 @@
+[
+    {
+        "id": "49e38ad0-a8c7-11ec-841a-92d180d6854d",
+        "name": "ise1",
+        "link": {
+            "rel": "self",
+            "href": "https://10.253.68.202/ers/config/node/49e38ad0-a8c7-11ec-841a-92d180d6854d",
+            "type": "application/json"
+        },
+        "certs": [
+            {
+                "id": "72db3c0c-1e3f-40d4-8c27-feb6f02d3c77",
+                "friendlyName": "Default self-signed server certificate",
+                "serialNumberDecimalFormat": "128224638549125262007088746014631495252",
+                "issuedTo": "ise1.pod1.flcloud.com",
+                "issuedBy": "ise1.pod1.flcloud.com",
+                "validFrom": "Wed Apr 14 17:47:51 UTC 2021",
+                "expirationDate": "Fri Apr 14 17:47:51 UTC 2023",
+                "usedBy": "Portal, RADIUS DTLS",
+                "keySize": 4096,
+                "groupTag": "Default Portal Certificate Group",
+                "selfSigned": true,
+                "signatureAlgorithm": "SHA384WITHRSA",
+                "portalsUsingTheTag": "BYOD Portal (default), Blocked List Portal (default), Certificate Provisioning Portal (default), Client Provisioning Portal (default), Hotspot Guest Portal (default), ISE Portal (default), MDM Portal (default), My Devices Portal (default), Self-Registered Guest Portal (default), Sponsor Portal (default), Sponsored Guest Portal (default)",
+                "sha256Fingerprint": "55f3d629076867eca6acc448f498b25d872009a35b7e188879037f2fe41ed709",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/72db3c0c-1e3f-40d4-8c27-feb6f02d3c77",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "5e46acbf-d1d0-4662-ae29-64fce178e1b3",
+                "friendlyName": "Default self-signed saml server certificate - CN=SAML_ise1.pod1.flcloud.com",
+                "serialNumberDecimalFormat": "128224639341406887155421677543245599763",
+                "issuedTo": "SAML_ise1.pod1.flcloud.com",
+                "issuedBy": "SAML_ise1.pod1.flcloud.com",
+                "validFrom": "Wed Apr 14 17:48:01 UTC 2021",
+                "expirationDate": "Mon Apr 13 17:48:01 UTC 2026",
+                "usedBy": "SAML",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": true,
+                "signatureAlgorithm": "SHA384WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "3d147353d79af7b3a9ef970397d657fb4488f55c4f9cd944baad8b3e5518ca78",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/5e46acbf-d1d0-4662-ae29-64fce178e1b3",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "2e812207-efaf-4a64-a911-0da74b9bd3c1",
+                "friendlyName": "OU=ISE Messaging Service,CN=ise1.pod1.flcloud.com#Certificate Services Endpoint Sub CA - ise1#00001",
+                "serialNumberDecimalFormat": "98832780357272193700215685347186611001",
+                "issuedTo": "ise1.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise1",
+                "validFrom": "Tue Apr 13 17:55:41 UTC 2021",
+                "expirationDate": "Tue Apr 14 17:55:41 UTC 2026",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "dd2b6146fddf03127541f6900f612fe1114f730007d5ac2e7d70a9e5fa627253",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/2e812207-efaf-4a64-a911-0da74b9bd3c1",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "8015c5ac-035c-42b7-8a7f-4ded3b2ab038",
+                "friendlyName": "OU=Certificate Services System Certificate,CN=ise1.pod1.flcloud.com#Certificate Services Endpoint Sub CA - ise1#00002",
+                "serialNumberDecimalFormat": "139032810940333430553562770759663391061",
+                "issuedTo": "ise1.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise1",
+                "validFrom": "Tue Apr 13 17:55:38 UTC 2021",
+                "expirationDate": "Tue Apr 14 17:55:38 UTC 2026",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "87c4ea9239a6a90d3afa6f7f82a5cbb36d2af508eadb3e1b86d7d96e367e2623",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/8015c5ac-035c-42b7-8a7f-4ded3b2ab038",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "96035600-0849-4739-bf8c-2a2d0e179d5f",
+                "friendlyName": "CN=ise1.pod1.flcloud.com, OU=Certificate Services System Certificate#Certificate Services Endpoint Sub CA - ise1#00003",
+                "serialNumberDecimalFormat": "46526065081017768775689812586310067576",
+                "issuedTo": "ise1.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise1",
+                "validFrom": "Sun Mar 20 11:17:29 UTC 2022",
+                "expirationDate": "Sun Mar 21 11:17:29 UTC 2027",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "bb1a149ac5cb583f7637d547bd44d5cab5efc88df886c61f6c14f85efbacc888",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/96035600-0849-4739-bf8c-2a2d0e179d5f",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "a80d612b-56b8-42d5-a63a-e24be9a1a7ce",
+                "friendlyName": "CN=ise1.pod1.flcloud.com, OU=ISE Messaging Service#Certificate Services Endpoint Sub CA - ise1#00004",
+                "serialNumberDecimalFormat": "20955219181125412637014395843509801807",
+                "issuedTo": "ise1.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise1",
+                "validFrom": "Sun Mar 20 11:17:30 UTC 2022",
+                "expirationDate": "Sun Mar 21 11:17:30 UTC 2027",
+                "usedBy": "ISE Messaging Service",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "9fb04ac0765264c6509ad0891da3bc4e5d9e14cc08e8fc66f41e35fa517053b4",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/a80d612b-56b8-42d5-a63a-e24be9a1a7ce",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "10ebc4e6-7797-4328-9c9c-a79c9186020d",
+                "friendlyName": "domain certificate",
+                "serialNumberDecimalFormat": "1137338005153451080931741202782500773534105605",
+                "issuedTo": "ise1.pod1.flcloud.com",
+                "issuedBy": "pod1-PKI-CA",
+                "validFrom": "Tue May 24 11:11:26 UTC 2022",
+                "expirationDate": "Thu May 23 11:11:26 UTC 2024",
+                "usedBy": "Admin, EAP Authentication, pxGrid",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "5996bed92dd32e8ecd557e802ff1df115d2982d23751372f2f43be25f4b90780",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise1/10ebc4e6-7797-4328-9c9c-a79c9186020d",
+                    "type": "application/json"
+                }
+            }
+        ]
+    },
+    {
+        "id": "641b4ba0-9d5a-11eb-8502-4e8a9df8526b",
+        "name": "ise2",
+        "link": {
+            "rel": "self",
+            "href": "https://10.253.68.202/ers/config/node/641b4ba0-9d5a-11eb-8502-4e8a9df8526b",
+            "type": "application/json"
+        },
+        "certs": [
+            {
+                "id": "a0762363-2adb-4093-a3fb-90d5d2249a12",
+                "friendlyName": "Default self-signed saml server certificate - CN=SAML_ise2.pod1.flcloud.com",
+                "serialNumberDecimalFormat": "128224652651738189537957040738062072247",
+                "issuedTo": "SAML_ise2.pod1.flcloud.com",
+                "issuedBy": "SAML_ise2.pod1.flcloud.com",
+                "validFrom": "Wed Apr 14 17:50:49 UTC 2021",
+                "expirationDate": "Mon Apr 13 17:50:49 UTC 2026",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": true,
+                "signatureAlgorithm": "SHA384WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "02615d3703208a4e46e252fd24836dd6ff4254671e3d55e2e496051b1f926760",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/a0762363-2adb-4093-a3fb-90d5d2249a12",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "e0e5a060-ce78-45af-b486-7b29a18f6829",
+                "friendlyName": "Default self-signed server certificate",
+                "serialNumberDecimalFormat": "128224651859456564406158462957386533356",
+                "issuedTo": "ise2.pod1.flcloud.com",
+                "issuedBy": "ise2.pod1.flcloud.com",
+                "validFrom": "Wed Apr 14 17:50:39 UTC 2021",
+                "expirationDate": "Fri Apr 14 17:50:39 UTC 2023",
+                "usedBy": "Portal, RADIUS DTLS",
+                "keySize": 4096,
+                "groupTag": "Default Portal Certificate Group",
+                "selfSigned": true,
+                "signatureAlgorithm": "SHA384WITHRSA",
+                "portalsUsingTheTag": "BYOD Portal (default), Blocked List Portal (default), Certificate Provisioning Portal (default), Client Provisioning Portal (default), Hotspot Guest Portal (default), ISE Portal (default), MDM Portal (default), My Devices Portal (default), Self-Registered Guest Portal (default), Sponsor Portal (default), Sponsored Guest Portal (default)",
+                "sha256Fingerprint": "3d953b8f2b4f9244f772bcdfc63f3707846e97741acbf0d2cd524751b95d55d5",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/e0e5a060-ce78-45af-b486-7b29a18f6829",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "43b1f70e-a582-4142-a582-577be4bd0783",
+                "friendlyName": "Default self-signed saml server certificate - CN=SAML_ise1.pod1.flcloud.com",
+                "serialNumberDecimalFormat": "128224639341406887155421677543245599763",
+                "issuedTo": "SAML_ise1.pod1.flcloud.com",
+                "issuedBy": "SAML_ise1.pod1.flcloud.com",
+                "validFrom": "Wed Apr 14 17:48:01 UTC 2021",
+                "expirationDate": "Mon Apr 13 17:48:01 UTC 2026",
+                "usedBy": "SAML",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": true,
+                "signatureAlgorithm": "SHA384WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "96d9972c6b72088130631f5ab08a1252d8a659b1ffb30fb4dba2f28af97b2233",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/43b1f70e-a582-4142-a582-577be4bd0783",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "1aea5c28-4294-416b-a339-a24de5d90c09",
+                "friendlyName": "OU=Certificate Services System Certificate,CN=ise2.pod1.flcloud.com#Certificate Services Endpoint Sub CA - ise2#00003",
+                "serialNumberDecimalFormat": "49985182413848841482255848977092328648",
+                "issuedTo": "ise2.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise2",
+                "validFrom": "Tue Apr 13 20:02:40 UTC 2021",
+                "expirationDate": "Tue Apr 14 20:02:40 UTC 2026",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "45ef5ff267c2c2e93a00f45e8f0ec21f1e287e8a8a129e00fb46360929f58b64",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/1aea5c28-4294-416b-a339-a24de5d90c09",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "ff17578f-41db-4626-ae38-8e3c374362df",
+                "friendlyName": "OU=ISE Messaging Service,CN=ise2.pod1.flcloud.com#Certificate Services Endpoint Sub CA - ise2#00004",
+                "serialNumberDecimalFormat": "47383673848113359413828543020945944757",
+                "issuedTo": "ise2.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise2",
+                "validFrom": "Tue Apr 13 20:02:41 UTC 2021",
+                "expirationDate": "Tue Apr 14 20:02:41 UTC 2026",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "0f38467d3a45aa08a6610ba940f733f9359e1b19fb7454347095821048469a57",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/ff17578f-41db-4626-ae38-8e3c374362df",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "b9ba0e23-2497-4f94-b146-f6bb353a8aa0",
+                "friendlyName": "ISE1 issued pxgrid cert",
+                "serialNumberDecimalFormat": "123054357450598509858681220052344712323",
+                "issuedTo": "ise2",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise1",
+                "validFrom": "Wed Apr 14 16:44:11 UTC 2021",
+                "expirationDate": "Sat Apr 15 16:44:11 UTC 2023",
+                "usedBy": "Not in use",
+                "keySize": 2048,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "b641112885b9e8c6b41f3637079ff9a5658933f5fc6e4049a491205210f35fd4",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/b9ba0e23-2497-4f94-b146-f6bb353a8aa0",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "75c497e1-582f-4747-9a1d-d7da91cc25f5",
+                "friendlyName": "CN=ise2.pod1.flcloud.com, OU=ISE Messaging Service#Certificate Services Endpoint Sub CA - ise2#00006",
+                "serialNumberDecimalFormat": "139970908931147102531155850504725345758",
+                "issuedTo": "ise2.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise2",
+                "validFrom": "Mon May 23 11:40:10 UTC 2022",
+                "expirationDate": "Mon May 24 11:40:10 UTC 2027",
+                "usedBy": "ISE Messaging Service",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "a9151c6362837da3da165b93c497007f586c6c60d3e64b0424d89c8123169fc4",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/75c497e1-582f-4747-9a1d-d7da91cc25f5",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "80b5de13-03c2-4e3a-a537-1adb23c99c04",
+                "friendlyName": "CN=ise2.pod1.flcloud.com, OU=IT, O=flcloud.com#pod1-PKI-CA#00007",
+                "serialNumberDecimalFormat": "1137338005184480874489111261683884662752018443",
+                "issuedTo": "ise2.pod1.flcloud.com",
+                "issuedBy": "pod1-PKI-CA",
+                "validFrom": "Tue May 24 16:34:18 UTC 2022",
+                "expirationDate": "Thu May 23 16:34:18 UTC 2024",
+                "usedBy": "Admin, EAP Authentication, pxGrid",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "12952cbd3d29e5d30dea4ffdbfa35ae571ab8504641957935075af784c45fdae",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/80b5de13-03c2-4e3a-a537-1adb23c99c04",
+                    "type": "application/json"
+                }
+            },
+            {
+                "id": "f5be989c-49ae-4bc3-ba52-f9547654bb62",
+                "friendlyName": "CN=ise2.pod1.flcloud.com, OU=Certificate Services System Certificate#Certificate Services Endpoint Sub CA - ise2#00005",
+                "serialNumberDecimalFormat": "141451161473389149292299343944587442944",
+                "issuedTo": "ise2.pod1.flcloud.com",
+                "issuedBy": "Certificate Services Endpoint Sub CA - ise2",
+                "validFrom": "Mon May 23 11:40:10 UTC 2022",
+                "expirationDate": "Mon May 24 11:40:10 UTC 2027",
+                "usedBy": "Not in use",
+                "keySize": 4096,
+                "groupTag": "",
+                "selfSigned": false,
+                "signatureAlgorithm": "SHA256WITHRSA",
+                "portalsUsingTheTag": "",
+                "sha256Fingerprint": "3c1a332197d44da752571f48834c1636f6fa97f565f2579631a0177c2b6ccf51",
+                "link": {
+                    "rel": "self",
+                    "href": "https://10.253.68.202/api/v1/certs/system-certificate/ise2/f5be989c-49ae-4bc3-ba52-f9547654bb62",
+                    "type": "application/json"
+                }
+            }
+        ]
+    }
+]
