@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 import os
+import rich
 import rich_click as click
 from art import banner
-from functions import *
+from functions import\
+    get_nodes,\
+    print_cert_list,\
+    export_cert_list,\
+    get_ise_creds,\
+    expiration_check
 
 # get ISE environment variables
 # cleanly exit if missing environment vars
@@ -13,15 +19,17 @@ if not "ISE_PAN" in os.environ and "ISE_USER" not in os.environ\
     Error: missing one or more environment variables.
 
     Please ensure you've defined the following:
-    ISE_PAN
+    ISE_PAN`
     ISE_USER
     ISE_PASSWORD
     """)
     exit(1)
 
+ise_pan, ise_user, ise_password = get_ise_creds()
+
 @click.command()
 @click.option('-c', '--command',\
-    type = click.Choice(['ls', 'export', 'expire']))
+    type = click.Choice(['ls', 'export','cert-list', 'expire']))
 @click.version_option(version="0.1")
 def cli(command):
     """
@@ -31,6 +39,7 @@ def cli(command):
     """
     if command == None:
         click.echo("No command selected. use --help for available commands.")
+   
     # get list of nodes in the deployment
     if command == "ls":
         click.echo("Retrieving list of nodes in the deployment:\n")
@@ -41,20 +50,18 @@ def cli(command):
 
     elif command == "export":
         # retrieve certificates and populate cert list under the node object
-        ise_nodes = get_nodes(ise_pan, ise_user, ise_password)  
-        for node in ise_nodes:
-            certs = get_certificates(node['name'])
-            id = node["id"]
-            node['certs'] = certs
-
-        for node in ise_nodes:
-            print(f"\nretrieving certificates for {node['name']}")
-            for list in node['certs']:
-                print(f'ID: {list["id"]}, Name: {list["friendlyName"]}')
-                export_certificates(list["id"])
+        ise_nodes = get_nodes(ise_pan, ise_user, ise_password)
+        export_cert_list(ise_nodes)
     
+    elif command == "cert-list":
+        ise_nodes = get_nodes(ise_pan, ise_user, ise_password)
+        print_cert_list(ise_nodes)
+        
     elif command == "expire":
-        click.echo("coming soon")
+        click.echo("Checking for Expiring Certs")
+        ise_nodes = get_nodes(ise_pan, ise_user, ise_password)
+        expiration_check(ise_nodes)
+
 
 
 if __name__ == "__main__":
