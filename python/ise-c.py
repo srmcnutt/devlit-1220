@@ -19,7 +19,7 @@ if not "ISE_PAN" in os.environ and "ISE_USER" not in os.environ\
     Error: missing one or more environment variables.
 
     Please ensure you've defined the following:
-    ISE_PAN`
+    ISE_PAN
     ISE_USER
     ISE_PASSWORD
     """)

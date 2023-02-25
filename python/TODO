@@ -1,6 +1,5 @@
-* Disaster recovery export (need to investigate bug with private key error on multiple nodes)
 * Generate new certificates
     - Let's encrypt
     - ADCS using ACME proxy
-* Expiring certificate check
+* auto-generate certificate passphrase on export (thanks dan!)
 * (Maybe) Replace expiring certificates (Be careful with this!)

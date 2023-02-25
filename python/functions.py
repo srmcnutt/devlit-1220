@@ -85,10 +85,10 @@ def export_cert_list(ise_nodes):
             print(f"\nexporting certificates for {node['name']}")
             for list in node['certs']:
                 print(f'Exporting ID: {list["id"]}, Name: {list["friendlyName"]}')
-                export_certificate(list["id"])
+                export_certificate(list["id"], node)
     return
 
-def export_certificate(id, certificate_password="C1sco12345", dir="cert_backup"):
+def export_certificate(id, node, certificate_password="C1sco12345", dir="cert_backup"):
     """
     Export all the system certificates on a node
     and store them on disk
@@ -103,15 +103,16 @@ def export_certificate(id, certificate_password="C1sco12345", dir="cert_backup")
 
     payload = {
     "export": "CERTIFICATE_WITH_PRIVATE_KEY",
+    "hostName": f"{node['name']}", 
     "id": f"{id}",
     "password": f"{certificate_password}"
     }
-
+    
     try:
         res = requests.post(url, headers=headers, verify=False, auth=(ise_user, ise_password), json=payload)
         res.raise_for_status()
     except requests.exceptions.HTTPError as err:
-        raise SystemExit(err)
+        raise SystemExit(err.response.text)
     
     filename = (res.headers.get("Content-Disposition").split("filename=")[1])
     
