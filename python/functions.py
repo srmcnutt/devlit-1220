@@ -129,7 +129,7 @@ def make_adcs():
     pass
 
 def expiration_check(ise_nodes):
-    CERT_EXP_ALARM = 320
+    CERT_EXP_ALARM = 800
     build_data_structure(ise_nodes)
     now = datetime.now()
     for node in ise_nodes:
